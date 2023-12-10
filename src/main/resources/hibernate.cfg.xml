@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.p6spy.engine.spy.P6SpyDriver</property>
+        <property name="hibernate.connection.url">jdbc:p6spy:mysql://localhost:3306/movie</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- Dialect tells Hibernate how to generate SQL queries for the chosen database -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.highlight_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mapping files -->
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Actor"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Address"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Category"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.City"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Country"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Customer"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Film"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.FilmText"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Inventory"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Language"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Payment"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Rental"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Staff"/>
+        <mapping class="in.javarush.sobaleva.hiber2.entity.Store"/>
+
+    </session-factory>
+</hibernate-configuration>
